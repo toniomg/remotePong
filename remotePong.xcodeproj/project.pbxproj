@@ -13,6 +13,12 @@
 		CF031FAA150539D700E04775 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF031FA8150539D700E04775 /* InfoPlist.strings */; };
 		CF031FAC150539D700E04775 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FAB150539D700E04775 /* main.m */; };
 		CF031FB0150539D700E04775 /* RPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FAF150539D700E04775 /* RPAppDelegate.m */; };
+		CF031FC215053A9300E04775 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FC015053A9300E04775 /* MainViewController.m */; };
+		CF031FC315053A9300E04775 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF031FC115053A9300E04775 /* MainViewController.xib */; };
+		CF031FC515053AC600E04775 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031FC415053AC600E04775 /* OpenGLES.framework */; };
+		CF031FC715053ACB00E04775 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031FC615053ACB00E04775 /* QuartzCore.framework */; };
+		CF031FC915053AD300E04775 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031FC815053AD300E04775 /* GLKit.framework */; };
+		CF031FCC15053C9400E04775 /* RPSimpleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FCB15053C9400E04775 /* RPSimpleSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +26,20 @@
 		CF031F9F150539D700E04775 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF031FA1150539D700E04775 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF031FA3150539D700E04775 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CF031FA7150539D700E04775 /* remotePong-Info.plist */ = {isa = PBXFileReference; path = "remotePong-Info.plist"; sourceTree = "<group>"; };
+		CF031FA7150539D700E04775 /* remotePong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "remotePong-Info.plist"; sourceTree = "<group>"; };
 		CF031FA9150539D700E04775 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF031FAB150539D700E04775 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CF031FAD150539D700E04775 /* remotePong-Prefix.pch */ = {isa = PBXFileReference; path = "remotePong-Prefix.pch"; sourceTree = "<group>"; };
-		CF031FAE150539D700E04775 /* RPAppDelegate.h */ = {isa = PBXFileReference; path = RPAppDelegate.h; sourceTree = "<group>"; };
+		CF031FAD150539D700E04775 /* remotePong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "remotePong-Prefix.pch"; sourceTree = "<group>"; };
+		CF031FAE150539D700E04775 /* RPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPAppDelegate.h; sourceTree = "<group>"; };
 		CF031FAF150539D700E04775 /* RPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPAppDelegate.m; sourceTree = "<group>"; };
+		CF031FBF15053A9300E04775 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CF031FC015053A9300E04775 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CF031FC115053A9300E04775 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		CF031FC415053AC600E04775 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CF031FC615053ACB00E04775 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CF031FC815053AD300E04775 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		CF031FCA15053C9400E04775 /* RPSimpleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPSimpleSprite.h; sourceTree = "<group>"; };
+		CF031FCB15053C9400E04775 /* RPSimpleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPSimpleSprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF031FC915053AD300E04775 /* GLKit.framework in Frameworks */,
+				CF031FC715053ACB00E04775 /* QuartzCore.framework in Frameworks */,
+				CF031FC515053AC600E04775 /* OpenGLES.framework in Frameworks */,
 				CF031FA0150539D700E04775 /* UIKit.framework in Frameworks */,
 				CF031FA2150539D700E04775 /* Foundation.framework in Frameworks */,
 				CF031FA4150539D700E04775 /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +62,9 @@
 		CF031F90150539D700E04775 = {
 			isa = PBXGroup;
 			children = (
+				CF031FC815053AD300E04775 /* GLKit.framework */,
+				CF031FC615053ACB00E04775 /* QuartzCore.framework */,
+				CF031FC415053AC600E04775 /* OpenGLES.framework */,
 				CF031FA5150539D700E04775 /* remotePong */,
 				CF031F9E150539D700E04775 /* Frameworks */,
 				CF031F9C150539D700E04775 /* Products */,
@@ -72,8 +92,13 @@
 		CF031FA5150539D700E04775 /* remotePong */ = {
 			isa = PBXGroup;
 			children = (
+				CF031FCA15053C9400E04775 /* RPSimpleSprite.h */,
+				CF031FCB15053C9400E04775 /* RPSimpleSprite.m */,
 				CF031FAE150539D700E04775 /* RPAppDelegate.h */,
 				CF031FAF150539D700E04775 /* RPAppDelegate.m */,
+				CF031FBF15053A9300E04775 /* MainViewController.h */,
+				CF031FC015053A9300E04775 /* MainViewController.m */,
+				CF031FC115053A9300E04775 /* MainViewController.xib */,
 				CF031FA6150539D700E04775 /* Supporting Files */,
 			);
 			path = remotePong;
@@ -141,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF031FAA150539D700E04775 /* InfoPlist.strings in Resources */,
+				CF031FC315053A9300E04775 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +179,8 @@
 			files = (
 				CF031FAC150539D700E04775 /* main.m in Sources */,
 				CF031FB0150539D700E04775 /* RPAppDelegate.m in Sources */,
+				CF031FC215053A9300E04775 /* MainViewController.m in Sources */,
+				CF031FCC15053C9400E04775 /* RPSimpleSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

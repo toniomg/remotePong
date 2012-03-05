@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
+#import "RPSimpleSprite.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : GLKViewController <GLKViewControllerDelegate, GLKViewDelegate>
 
 @end
