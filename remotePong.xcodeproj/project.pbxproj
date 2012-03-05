@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF031FA0150539D700E04775 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031F9F150539D700E04775 /* UIKit.framework */; };
+		CF031FA2150539D700E04775 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031FA1150539D700E04775 /* Foundation.framework */; };
+		CF031FA4150539D700E04775 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031FA3150539D700E04775 /* CoreGraphics.framework */; };
+		CF031FAA150539D700E04775 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF031FA8150539D700E04775 /* InfoPlist.strings */; };
+		CF031FAC150539D700E04775 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FAB150539D700E04775 /* main.m */; };
+		CF031FB0150539D700E04775 /* RPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF031FAF150539D700E04775 /* RPAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF031F9B150539D700E04775 /* remotePong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remotePong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF031F9F150539D700E04775 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF031FA1150539D700E04775 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF031FA3150539D700E04775 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF031FA7150539D700E04775 /* remotePong-Info.plist */ = {isa = PBXFileReference; path = "remotePong-Info.plist"; sourceTree = "<group>"; };
+		CF031FA9150539D700E04775 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF031FAB150539D700E04775 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF031FAD150539D700E04775 /* remotePong-Prefix.pch */ = {isa = PBXFileReference; path = "remotePong-Prefix.pch"; sourceTree = "<group>"; };
+		CF031FAE150539D700E04775 /* RPAppDelegate.h */ = {isa = PBXFileReference; path = RPAppDelegate.h; sourceTree = "<group>"; };
+		CF031FAF150539D700E04775 /* RPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF031F98150539D700E04775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF031FA0150539D700E04775 /* UIKit.framework in Frameworks */,
+				CF031FA2150539D700E04775 /* Foundation.framework in Frameworks */,
+				CF031FA4150539D700E04775 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF031F90150539D700E04775 = {
+			isa = PBXGroup;
+			children = (
+				CF031FA5150539D700E04775 /* remotePong */,
+				CF031F9E150539D700E04775 /* Frameworks */,
+				CF031F9C150539D700E04775 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF031F9C150539D700E04775 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF031F9B150539D700E04775 /* remotePong.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF031F9E150539D700E04775 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF031F9F150539D700E04775 /* UIKit.framework */,
+				CF031FA1150539D700E04775 /* Foundation.framework */,
+				CF031FA3150539D700E04775 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF031FA5150539D700E04775 /* remotePong */ = {
+			isa = PBXGroup;
+			children = (
+				CF031FAE150539D700E04775 /* RPAppDelegate.h */,
+				CF031FAF150539D700E04775 /* RPAppDelegate.m */,
+				CF031FA6150539D700E04775 /* Supporting Files */,
+			);
+			path = remotePong;
+			sourceTree = "<group>";
+		};
+		CF031FA6150539D700E04775 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF031FA7150539D700E04775 /* remotePong-Info.plist */,
+				CF031FA8150539D700E04775 /* InfoPlist.strings */,
+				CF031FAB150539D700E04775 /* main.m */,
+				CF031FAD150539D700E04775 /* remotePong-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF031F9A150539D700E04775 /* remotePong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF031FB3150539D700E04775 /* Build configuration list for PBXNativeTarget "remotePong" */;
+			buildPhases = (
+				CF031F97150539D700E04775 /* Sources */,
+				CF031F98150539D700E04775 /* Frameworks */,
+				CF031F99150539D700E04775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = remotePong;
+			productName = remotePong;
+			productReference = CF031F9B150539D700E04775 /* remotePong.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF031F92150539D700E04775 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = CF031F95150539D700E04775 /* Build configuration list for PBXProject "remotePong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF031F90150539D700E04775;
+			productRefGroup = CF031F9C150539D700E04775 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF031F9A150539D700E04775 /* remotePong */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF031F99150539D700E04775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF031FAA150539D700E04775 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF031F97150539D700E04775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF031FAC150539D700E04775 /* main.m in Sources */,
+				CF031FB0150539D700E04775 /* RPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF031FA8150539D700E04775 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF031FA9150539D700E04775 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF031FB1150539D700E04775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF031FB2150539D700E04775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF031FB4150539D700E04775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "remotePong/remotePong-Prefix.pch";
+				INFOPLIST_FILE = "remotePong/remotePong-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CF031FB5150539D700E04775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "remotePong/remotePong-Prefix.pch";
+				INFOPLIST_FILE = "remotePong/remotePong-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF031F95150539D700E04775 /* Build configuration list for PBXProject "remotePong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF031FB1150539D700E04775 /* Debug */,
+				CF031FB2150539D700E04775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF031FB3150539D700E04775 /* Build configuration list for PBXNativeTarget "remotePong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF031FB4150539D700E04775 /* Debug */,
+				CF031FB5150539D700E04775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF031F92150539D700E04775 /* Project object */;
+}
