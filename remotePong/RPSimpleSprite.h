@@ -20,4 +20,5 @@
 @property (assign) GLKVector2 position;
 @property (assign) CGSize totalSize;
 
+
 @end

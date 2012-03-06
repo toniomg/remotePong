@@ -62,9 +62,6 @@
 		CF031F90150539D700E04775 = {
 			isa = PBXGroup;
 			children = (
-				CF031FC815053AD300E04775 /* GLKit.framework */,
-				CF031FC615053ACB00E04775 /* QuartzCore.framework */,
-				CF031FC415053AC600E04775 /* OpenGLES.framework */,
 				CF031FA5150539D700E04775 /* remotePong */,
 				CF031F9E150539D700E04775 /* Frameworks */,
 				CF031F9C150539D700E04775 /* Products */,
@@ -82,6 +79,9 @@
 		CF031F9E150539D700E04775 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF031FC815053AD300E04775 /* GLKit.framework */,
+				CF031FC615053ACB00E04775 /* QuartzCore.framework */,
+				CF031FC415053AC600E04775 /* OpenGLES.framework */,
 				CF031F9F150539D700E04775 /* UIKit.framework */,
 				CF031FA1150539D700E04775 /* Foundation.framework */,
 				CF031FA3150539D700E04775 /* CoreGraphics.framework */,
@@ -284,6 +284,7 @@
 				CF031FB5150539D700E04775 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
