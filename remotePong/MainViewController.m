@@ -18,6 +18,8 @@
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
 @property (strong, nonatomic) RPSimpleSprite *ball; 
+@property (strong, nonatomic) RPSimpleSprite *barOne; 
+@property (strong, nonatomic) RPSimpleSprite *barTwo; 
 
 @end
 
@@ -34,6 +36,8 @@ typedef struct {
 @synthesize context = _context;
 @synthesize effect = _effect;
 @synthesize ball = _ball;
+@synthesize barOne = _barOne;
+@synthesize barTwo = _barTwo;
 
 #define DIRECTION_UP_RIGHT  1
 #define DIRECTION_UP_LEFT 2
@@ -78,14 +82,25 @@ typedef struct {
     view.context = self.context;
     [EAGLContext setCurrentContext:self.context];
     
+    CGRect totalFrame = self.view.frame;
+    
     self.effect = [[GLKBaseEffect alloc] init];
     
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, 320, 0, 480, -1, 1);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, totalFrame.size.width, 0, totalFrame.size.height, -1, 1);
     self.effect.transform.projectionMatrix = projectionMatrix;
     
     
     //Init the ball
-    self.ball = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(50, 50) origin:CGPointMake(100, 100) effect:self.effect];
+    self.ball = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(20, 20) origin:CGPointMake(100, 100) effect:self.effect];
+    
+    //Init the first bar
+    int barWidth = 20;
+    int barHeight = 80;
+    int barY = 40;
+    
+    self.barOne =  [[RPSimpleSprite alloc] initWithSize:CGSizeMake(barHeight, barWidth) origin:CGPointMake(totalFrame.size.width/2 - barHeight/2, barY) effect:self.effect];
+    
+    self.barTwo =  [[RPSimpleSprite alloc] initWithSize:CGSizeMake(barHeight, barWidth) origin:CGPointMake(totalFrame.size.width/2 - barHeight/2, totalFrame.size.height - barY - barWidth) effect:self.effect];
     
     myDirection = DIRECTION_UP_RIGHT;
     
@@ -124,7 +139,7 @@ typedef struct {
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationIsLandscape(interfaceOrientation));
 }
 
 #pragma mark - GLKView and GLKViewController delegate methods
@@ -209,7 +224,8 @@ typedef struct {
     glEnable(GL_BLEND);
     
     [self.ball render];
-    
+    [self.barOne render];
+    [self.barTwo render];
 }
 
 @end
