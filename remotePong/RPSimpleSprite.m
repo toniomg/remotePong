@@ -91,5 +91,9 @@ typedef struct {
     
 }
 
+-(void)moveTo:(CGPoint)to{
+    
+}
+
 
 @end

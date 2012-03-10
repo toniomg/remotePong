@@ -15,11 +15,13 @@
     
 }
 
+-(void)createNet;
+
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
 @property (strong, nonatomic) RPSimpleSprite *ball; 
 @property (strong, nonatomic) RPSimpleSprite *barOne; 
-@property (strong, nonatomic) RPSimpleSprite *barTwo; 
+@property (strong, nonatomic) NSArray *middleNet; 
 
 @end
 
@@ -37,7 +39,7 @@ typedef struct {
 @synthesize effect = _effect;
 @synthesize ball = _ball;
 @synthesize barOne = _barOne;
-@synthesize barTwo = _barTwo;
+@synthesize middleNet = middleNet;
 
 #define DIRECTION_UP_RIGHT  1
 #define DIRECTION_UP_LEFT 2
@@ -89,9 +91,10 @@ typedef struct {
     GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, totalFrame.size.width, 0, totalFrame.size.height, -1, 1);
     self.effect.transform.projectionMatrix = projectionMatrix;
     
+    CGPoint startPosition = CGPointMake(100, 100);
     
     //Init the ball
-    self.ball = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(20, 20) origin:CGPointMake(100, 100) effect:self.effect];
+    self.ball = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(20, 20) origin:startPosition effect:self.effect];
     
     //Init the first bar
     int barWidth = 20;
@@ -100,12 +103,32 @@ typedef struct {
     
     self.barOne =  [[RPSimpleSprite alloc] initWithSize:CGSizeMake(barHeight, barWidth) origin:CGPointMake(totalFrame.size.width/2 - barHeight/2, barY) effect:self.effect];
     
-    self.barTwo =  [[RPSimpleSprite alloc] initWithSize:CGSizeMake(barHeight, barWidth) origin:CGPointMake(totalFrame.size.width/2 - barHeight/2, totalFrame.size.height - barY - barWidth) effect:self.effect];
-    
-    myDirection = DIRECTION_UP_RIGHT;
-    
-    ballSpeed = 1;
+    //Create the middle net:
+    [self createNet];
 
+    myDirection = DIRECTION_DOWN_RIGHT;
+    
+    ballSpeed = 3;
+
+}
+
+-(void)createNet{
+    
+    CGRect totalFrame = self.view.frame;
+    
+    int netWidth = 10;
+    int netHeight = 40;
+    
+    RPSimpleSprite *middleNet1 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(-10, totalFrame.size.height - netWidth) effect:self.effect];
+    RPSimpleSprite *middleNet2 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(50, totalFrame.size.height - netWidth) effect:self.effect];
+    RPSimpleSprite *middleNet3 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(110, totalFrame.size.height - netWidth) effect:self.effect];
+    RPSimpleSprite *middleNet4 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(170, totalFrame.size.height - netWidth) effect:self.effect];
+    RPSimpleSprite *middleNet5 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(230, totalFrame.size.height - netWidth) effect:self.effect];
+    RPSimpleSprite *middleNet6 = [[RPSimpleSprite alloc] initWithSize:CGSizeMake(netHeight, netWidth) origin:CGPointMake(290, totalFrame.size.height - netWidth) effect:self.effect];
+    
+    middleNet = [[NSArray alloc] initWithObjects:middleNet1, middleNet2, middleNet3, middleNet4 , middleNet5, middleNet6, nil];
+    
+    
 }
 
 #pragma mark - View lifecycle
@@ -139,7 +162,7 @@ typedef struct {
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationIsLandscape(interfaceOrientation));
+    return (interfaceOrientation == UIInterfaceOrientationIsPortrait(interfaceOrientation));
 }
 
 #pragma mark - GLKView and GLKViewController delegate methods
@@ -148,8 +171,10 @@ typedef struct {
 - (void)update{
     
     
-    GLKVector2 position = self.ball.position;
-    NSLog(@"%f", position.x + self.ball.totalSize.width);
+    GLKVector2 position = self.ball.position; 
+    GLKVector2 positionBar = self.barOne.position;
+    
+    //NSLog(@"%f", position.x + self.ball.totalSize.width);
     
     if (position.x + self.ball.totalSize.width >= 320) {
         
@@ -159,7 +184,7 @@ typedef struct {
         else if (myDirection == DIRECTION_DOWN_RIGHT)
             myDirection = DIRECTION_DOWN_LEFT;
         
-        ballSpeed++;
+        //ballSpeed++;
         
     }
     else if (position.x <= 0){
@@ -170,7 +195,7 @@ typedef struct {
         else if (myDirection == DIRECTION_UP_LEFT)
             myDirection = DIRECTION_UP_RIGHT;
         
-        ballSpeed++;
+        //ballSpeed++;
         
     }
     else if (position.y <= 0){
@@ -180,7 +205,7 @@ typedef struct {
         else if (myDirection == DIRECTION_DOWN_RIGHT)
             myDirection = DIRECTION_UP_RIGHT;
         
-        ballSpeed++;
+        //ballSpeed++;
     }
     else if (position.y + self.ball.totalSize.height >= 480) {
         
@@ -190,7 +215,17 @@ typedef struct {
         else if (myDirection == DIRECTION_UP_LEFT)
             myDirection = DIRECTION_DOWN_LEFT;
     
-        ballSpeed++;
+        //ballSpeed++;
+    }
+    
+    //Check if touches the bar!
+    else if (position.y -self.ball.totalSize.height < positionBar.y){
+        
+        if (myDirection == DIRECTION_DOWN_RIGHT)
+            myDirection = DIRECTION_UP_RIGHT;
+        else if (myDirection == DIRECTION_DOWN_LEFT)
+            myDirection = DIRECTION_UP_LEFT;
+        
     }
     
     GLKVector2 curMove;
@@ -225,7 +260,23 @@ typedef struct {
     
     [self.ball render];
     [self.barOne render];
-    [self.barTwo render];
+    
+    for (int i = 0; i < [middleNet count] ; i++)
+    {
+        [[middleNet objectAtIndex:i] render];
+    }
+
 }
+
+
+#pragma mark Touch Methods
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+     NSLog(@"TOUCHED");   
+    //Move the bar
+    
+}
+
 
 @end
