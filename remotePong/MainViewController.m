@@ -108,7 +108,7 @@ typedef struct {
 
     myDirection = DIRECTION_DOWN_RIGHT;
     
-    ballSpeed = 3;
+    ballSpeed = 6;
 
 }
 
@@ -219,7 +219,7 @@ typedef struct {
     }
     
     //Check if touches the bar!
-    else if (position.y -self.ball.totalSize.height < positionBar.y){
+    else if (position.y -self.ball.totalSize.height < positionBar.y && position.x + self.ball.totalSize.width > positionBar.x && position.x < self.barOne.totalSize.width + positionBar.x){
         
         if (myDirection == DIRECTION_DOWN_RIGHT)
             myDirection = DIRECTION_UP_RIGHT;
@@ -273,8 +273,29 @@ typedef struct {
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-     NSLog(@"TOUCHED");   
-    //Move the bar
+    
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    CGPoint movedTouch = [[touches anyObject] locationInView: self.view];
+    
+    
+    if ([UIScreen instancesRespondToSelector:@selector(scale)]) 
+    {
+        CGFloat scale = [[UIScreen mainScreen] scale];
+        
+        float newPositionX = movedTouch.x;
+        if (scale > 1.0) 
+        {
+            newPositionX = newPositionX/2;
+        }
+    }
+    
+    self.barOne.position = GLKVector2Make(movedTouch.x - self.barOne.totalSize.width/2, self.barOne.position.y);
+    
+    //NSLog(@"POS: %f", self.barOne.position.x);
+    
     
 }
 
